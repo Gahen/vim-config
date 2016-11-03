@@ -29,7 +29,12 @@ function! HasPaste()
     endif
     return ''
 endfunction
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+set statusline+=\ %{HasPaste()}%F%m%r%h\ %w\  
+set laststatus=2
+set cursorline
+set modelines=1
+set showcmd
+set wildmenu
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
